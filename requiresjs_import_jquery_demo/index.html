@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</meta>
+<title>This is template.html</title>
+
+<script data-main="js/app.js" src="js/lib/require.js"></script>
+
+<script type="text/javascript">
+    function f() {
+        require(['util/math'], function (math) {
+            console.log("index.html: 1 + 1 = " + math.add(1, 1));
+        });
+        require(['jquery'], function ($) {
+            console.log("index.html: " + $("#label").text());
+        });
+        require(['usejquery/usejq'], function (usejq) {
+            usejq.printLabelTextById("label");
+        });
+    }
+</script>
+
+</head>
+<body>
+    <div>
+        <button type="button" onclick="f()">Click Me!</button>
+        <br>
+        <label id="label">initial text</label>
+    </div>
+</body>
+</html>  
